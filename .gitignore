@@ -43,3 +43,6 @@ rel/logs
 # eclipse
 .project
 /.pydevproject
+
+share/server/main-coffee.js
+share/server/main.js
