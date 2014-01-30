@@ -13,8 +13,6 @@
 all:  compile
 
 compile: rebar
-	@echo "==> couchjs (compile)"
-#	@cd couchjs && python scons/scons.py $(couchjsflags)
 	@./rebar compile
 
 rebar:
@@ -22,8 +20,6 @@ rebar:
 	@cd src/rebar && make && cp rebar ../..
 
 clean:
-	@echo "==> couchjs (clean)"
-#	@cd couchjs && python scons/scons.py --clean
 	@./rebar clean
 
 dist: compile
