@@ -41,8 +41,17 @@ DepDescs = [
 ],
 
 MakeDep = fun({AppName, RepoName, Version, Options}) ->
-    Url = "https://git-wip-us.apache.org/repos/asf/" ++ RepoName ++ ".git",
-    {AppName, ".*", {git, Url, Version}, Options}
+    case AppName of
+        couch ->
+            Url = "git@github.com:sagelywizard/couchdb-couch.git",
+            {AppName, ".*", {git, Url, {branch, "working"}}, Options}; % TODO: remove before PR
+        couch_mrview ->
+            Url = "git@github.com:sagelywizard/couchdb-couch-mrview.git",
+            {AppName, ".*", {git, Url, {branch, "working"}}, Options};
+        _ ->
+            Url = "https://git-wip-us.apache.org/repos/asf/" ++ RepoName ++ ".git",
+            {AppName, ".*", {git, Url, Version}, Options}
+    end
 end,
 
 AddConfig = [
