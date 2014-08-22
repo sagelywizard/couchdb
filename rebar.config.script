@@ -45,6 +45,12 @@ MakeDep = fun({AppName, RepoName, Version, Options}) ->
         couch ->
             Url = "git@github.com:sagelywizard/couchdb-couch.git",
             {AppName, ".*", {git, Url, {branch, "view-changes"}}, Options}; % TODO: remove before PR
+        couch_replicator ->
+            Url = "git@github.com:sagelywizard/couchdb-couch-replicator.git",
+            {AppName, ".*", {git, Url, {branch, "view-changes"}}, Options};
+        mem3 ->
+            Url = "git@github.com:sagelywizard/couchdb-mem3.git",
+            {AppName, ".*", {git, Url, {branch, "view-changes"}}, Options};
         couch_mrview ->
             Url = "git@github.com:sagelywizard/couchdb-couch-mrview.git",
             {AppName, ".*", {git, Url, {branch, "view-changes"}}, Options};
