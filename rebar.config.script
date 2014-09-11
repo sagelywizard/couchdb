@@ -68,6 +68,9 @@ MakeDep = fun
             couch_replicator ->
                 Url = "git@github.com:sagelywizard/couchdb-couch-replicator.git",
                 {AppName, ".*", {git, Url, {branch, "view-changes-windsor"}}};
+            couch_index ->
+                Url = "git@github.com:sagelywizard/couchdb-couch-index.git",
+                {AppName, ".*", {git, Url, {branch, "view-changes-windsor"}}};
             _ ->
                 Url = BaseUrl ++ "couchdb-" ++ RepoName ++ ".git",
                 {AppName, ".*", {git, Url, Version}}
